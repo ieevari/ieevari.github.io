@@ -1,0 +1,46 @@
+/* General Dark Theme */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Navbar */
+.navbar {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  background-color: #1f1f1f;
+  padding: 1rem;
+  margin: 0;
+  gap: 2rem;
+}
+
+.navbar li {
+  display: inline;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #e0e0e0;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.navbar a:hover {
+  background-color: #333;
+}
+
+/* Main Content Layout */
+main {
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Landing Page Links */
+.nav-links {
+  display: f
