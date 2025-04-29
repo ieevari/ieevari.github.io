@@ -21,7 +21,28 @@
   <main>
     <h1>🧊 3D Models</h1>
     <p>Here are some of my interactive 3D models.</p>
-    <!-- Add your <model-viewer> elements here -->
+    <div class="model-grid">
+    
+      <!-- Card 1 -->
+      <div class="model-card">
+        <model-viewer src="models/garretace300i.glb" alt="Garrett ACE 300i Metal Detector" auto-rotate camera-controls
+          disable-zoom interaction-prompt="when-focused">
+        </model-viewer>
+        <h2>Garrett ACE 300i</h2>
+        <p>A detailed model of my first metal detector. Created in Blender, optimized for WebGL using .glb format.</p>
+      </div>
+    
+      <!-- Card 2 -->
+      <div class="model-card">
+        <model-viewer src="models/kanto1.glb" alt="Tree Stump" auto-rotate camera-controls disable-zoom>
+        </model-viewer>
+        <h2>Tree Stump</h2>
+        <p>My own photo scan of a tree stump. Made for a game project. Game ready asset. Programs used: Blender and Agisoft Metashape</p>
+      </div>
+    
+      <!-- Add more model cards below -->
+    
+    </div>
   </main>
 </body>
 </html>
