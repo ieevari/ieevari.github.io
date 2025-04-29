@@ -1,27 +1,75 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>3D Model Test</title>
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-    <style>
-      body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 2rem;
-        font-family: sans-serif;
-      }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
 
-      model-viewer {
-        width: 600px;
-        height: 400px;
-        background-color: #f0f0f0;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>3D Model Preview</h1>
-    <model-viewer src="models/garretace300i.glb" alt="3D model" auto-rotate camera-controls></model-viewer>
-  </body>
+    header {
+      background-color: #333;
+      color: white;
+      width: 100%;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      background-color: #ddd;
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      transition: background 0.3s;
+      font-size: 1.2rem;
+    }
+
+    .nav-links a:hover {
+      background-color: #bbb;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Portfolio</h1>
+  </header>
+  <main>
+    <p>Welcome! Please explore:</p>
+    <div class="nav-links">
+      <a href="models.html">🧊 3D Models</a>
+      <a href="games.html">🎮 Games</a>
+      <a href="printing.html">🖨️ 3D Printing</a>
+    </div>
+  </main>
+</body>
 </html>
+
