@@ -7,25 +7,119 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header>
-    <nav>
-      <ul class="navbar">
-        <li><a href="index.html">🏠 Home</a></li>
-        <li><a href="models.html">🧊 Models</a></li>
-        <li><a href="games.html">🎮 Games</a></li>
-        <li><a href="printing.html">🖨️ 3D Printing</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div id="navbar"></div>
 
   <main>
-    <h1>Welcome to My Portfolio</h1>
-    <p>Explore my work:</p>
-    <div class="nav-links">
-      <a href="models.html">🧊 3D Models</a>
-      <a href="games.html">🎮 Games</a>
-      <a href="printing.html">🖨️ 3D Printing</a>
+    <h1>👋 Welcome to My Portfolio</h1>
+    <p></p>
+  
+    <section class="quick-links">
+      <h2>🔍 Explore My Work</h2>
+      <div class="nav-links">
+        <a href="models.html">🧊 3D Models</a>
+        <a href="projects.html">🎮 Projects</a>
+      </div>
+    </section>
+  
+    <div class="card-grid">
+  
+      <section class="info-card">
+        <h2>👤 About Me</h2>
+      
+        <p>Hi! I'm Leevi. I spend a lot of my time working with 3D models and small game projects using game engines like
+          <strong>Godot</strong>, <strong>Unreal Engine</strong>, and <strong>Unity</strong>.</p>
+      
+        <p>For modeling, I primarily use <strong>Blender</strong>, but I've also worked with various CAD software. I enjoy figuring out how
+           things work and finding ways to build or prototype ideas from
+          scratch.</p>
+      
+        <p>Beyond digital work, I love hands-on projects — whether it’s <strong>keeping my car running</strong>,
+          <strong>metalworking</strong>, or <strong>woodworking</strong> just for the joy of making something with my hands.</p>
+      
+        <p>Combining creativity and technology is what I enjoy the most — whether it’s through making <strong>games</strong>, <strong>3D
+            prints</strong>, or <strong>3D models</strong>.</p>
+      
+        <p>In my spare time, you’ll probably find me <strong>in a field with a metal detector</strong>, <strong>fishing on a
+            lake</strong>, or <strong>relaxing with video games</strong>.</p>
+      </section>
+
+  
+      <section class="info-card">
+        <h2>🛠️ Skills</h2>
+      
+        <div class="columns">
+          <div>
+            <h3>Strong Skills</h3>
+            <ul class="skill-list">
+              <li>3D Modeling</li>
+              <li>Game Engines</li>
+              <li>Game Design & Prototyping</li>
+              <li>UI/UX Design for Games</li>
+              <li>Version Control</li>
+              <li>Problem Solving</li>
+            </ul>
+          </div>
+      
+          <div>
+            <h3>Learning / Exploring</h3>
+            <ul class="skill-list">
+              <li>Mobile Development</li>
+              <li>CAD Modeling</li>
+              <li>Web Development (HTML/CSS/JS)</li>
+              <li>Sound Design & Editing</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+  
+      <section class="info-card">
+        <h2>🧰 My Toolbox</h2>
+        <div class="columns">
+          <div>
+            <h3>💻 Programming Languages</h3>
+            <ul>
+              <li>C++ (Unreal Engine)</li>
+              <li>C# (Unity, Godot)</li>
+              <li>Python</li>
+              <li>HTML, CSS, JavaScript</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>🖥️ Software I'm confident with</h3>
+            <ul>
+              <li>Blender</li>
+              <li>Godot Engine</li>
+              <li>Unity</li>
+              <li>Unreal Engine</li>
+              <li>Visual Studio (Code)</li>
+              <li>Adobe Photoshop</li>
+              <li>Vegas Pro</li>
+              <li>Audacity</li>
+              <li>Git & GitHub</li>
+            </ul>
+          </div>
+  
+          <div>
+            <h3>🖥️ Software I'm familiar with</h3>
+            <ul>
+              <li>Android Studio</li>
+              <li>Adobe Illustrator</li>
+              <li>Agisoft Metashape</li>
+              <li>QGIS</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+  
     </div>
   </main>
+  <script>
+    fetch("navbar.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('navbar').innerHTML = html;
+      });
+  </script>
 </body>
 </html>

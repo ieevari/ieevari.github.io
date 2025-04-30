@@ -41,9 +41,30 @@ main {
   text-align: center;
 }
 
-/* Landing Page Links */
 .nav-links {
-  display: f
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.nav-links a {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #2e2e2e;
+  border: 2px solid #444;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.nav-links a:hover {
+  background-color: #3d3d3d;
+  transform: scale(1.05);
 }
 
 .model-grid {
@@ -129,4 +150,76 @@ model-viewer {
 .card-content p {
   font-size: 1rem;
   color: #aaa;
+}
+
+.about-me,
+.skills,
+.toolbox {
+  margin-top: 3rem;
+  padding: 0 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.skill-list,
+.toolbox ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0.5rem;
+}
+
+.skill-list li,
+.toolbox li {
+  padding: 0.3rem 0;
+  color: #ccc;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 3rem auto;
+  padding: 0 2rem;
+  max-width: 1200px;
+  align-items: start;
+  /* or just remove this line entirely */
+}
+
+.info-card {
+  background-color: #1e1e1e;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  /* No height set */
+}
+
+.info-card:hover {
+  background-color: #292929;
+  transform: translateY(-5px);
+}
+
+.info-card h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.info-card p,
+.info-card li {
+  color: #cccccc;
+}
+
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.columns>div {
+  flex: 1;
+  min-width: 200px;
 }
