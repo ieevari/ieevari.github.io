@@ -1,0 +1,37 @@
+<footer class="site-footer">
+    <p>© 2025 Leevi | <button id="contactBtn">Contact Me</button></p>
+</footer>
+
+<!-- Contact Modal -->
+<div id="contactModal" class="modal-overlay">
+    <div class="modal-window">
+        <button class="close-btn" id="closeModal">&times;</button>
+        <h2>📬 Contact Me</h2>
+        <p>You can reach me via email or follow my projects:</p>
+        <ul>
+            <li>Email: <a href="mailto:your@email.com">your@email.com</a></li>
+            <li>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></li>
+            <li>Instagram: <a href="https://instagram.com/yourusername" target="_blank">@yourusername</a></li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    const contactBtn = document.getElementById('contactBtn');
+    const contactModal = document.getElementById('contactModal');
+    const closeModal = document.getElementById('closeModal');
+
+    contactBtn?.addEventListener('click', () => {
+        contactModal.style.display = 'flex';
+    });
+
+    closeModal?.addEventListener('click', () => {
+        contactModal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+        if (e.target === contactModal) {
+            contactModal.style.display = 'none';
+        }
+    });
+</script>
