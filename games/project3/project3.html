@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StrawBarrier</title>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body>
+    <!-- Reusable navbar -->
+    <div id="navbar"></div>
+
+    <main>
+        <h1>StrawBarrier (Game Jam)</h1>
+        <p>My submission for the GMTK Game Jam 2024. Theme of the jam was "Built to scale"
+            Link to the game's itch.io page: https://ieevari.itch.io/strawbarrier
+        </p>
+
+        <h2>About the Project</h2>
+        <p>
+            In this game you need to protect a strawberry comet until help arrives. The game is not very polished and has a few bugs still, but I'm happy how it turned out.
+            The game jam lasted for 4 days, but I could only work on the game for 2 days. I'm most proud of the design idea of working on different "levels" at the same time.
+            I was not super happy about the visual style of the game. Sound design was fun and I really like how the sound changes with the different levels of zoom.
+            Overall, this project is not my personal favourite but I like game jams so the process was enjoyable!
+        </p>
+
+        <!-- Primary video -->
+        <video controls muted width="100%" style="max-width: 720px; border-radius: 12px; margin: 1rem 0;">
+            <source src="/videos/strawbarrier.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+
+    <!-- Reusable footer with contact modal -->
+    <div id="site-footer"></div>
+
+    <script>
+        // Load shared navbar
+        fetch('/navbar.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('navbar').innerHTML = html;
+            });
+
+        // Load shared footer and bind modal functionality
+        fetch('/footer.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('site-footer').innerHTML = html;
+
+                const contactBtn = document.getElementById('contactBtn');
+                const contactModal = document.getElementById('contactModal');
+                const closeModal = document.getElementById('closeModal');
+
+                contactBtn?.addEventListener('click', () => {
+                    contactModal.style.display = 'flex';
+                });
+
+                closeModal?.addEventListener('click', () => {
+                    contactModal.style.display = 'none';
+                });
+
+                window.addEventListener('click', (e) => {
+                    if (e.target === contactModal) {
+                        contactModal.style.display = 'none';
+                    }
+                });
+            });
+    </script>
+</body>
+
+</html>
