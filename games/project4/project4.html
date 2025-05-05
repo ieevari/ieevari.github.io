@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OnkiOps</title>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body>
+    <!-- Reusable navbar -->
+    <div id="navbar"></div>
+
+    <main>
+        <h1>OnkiOps</h1>
+        <p>A top-down pixel-art fishing game made with Unity. </p>
+
+        <h2>About the Project</h2>
+        <p>
+            My attempt at making a fishing simulator. This project helped me learn more about procedural generation which, for me personally, is one of the most interesting
+            areas of game dev. Every asset except for the sounds of the oars splashing in water is made by me. I wanted to simulate real fishing as much as possible,
+            so I made all sorts of variables to control the chance and effectiveness of catching a fish. Each species has a different preference and each lure has it's own strengths.
+        </p>
+
+        <!-- Primary video -->
+        <video controls width="100%" style="max-width: 720px; border-radius: 12px; margin: 1rem 0;">
+            <source src="/videos/onkiops.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Optional second video -->
+        <!-- <video controls muted width="100%" style="max-width: 720px; border-radius: 12px; margin: 1rem 0;">
+      <source src="/videos/project-video2.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video> -->
+
+        <h2>Screenshots</h2>
+        <img src="/images/3dmodel.png" alt="Screenshot 1"
+            style="max-width: 100%; border-radius: 12px; margin-bottom: 1rem;" />
+        <img src="/images/3dmodel_camera.png" alt="Screenshot 2" style="max-width: 100%; border-radius: 12px;" />
+        <img src="/images/3dmodel_render.png" alt="Screenshot 3" style="max-width: 100%; border-radius: 12px;" />
+        <img src="/images/charactersettings.png" alt="Screenshot 4" style="max-width: 100%; border-radius: 12px;" />
+        <img src="/images/randommapenerator.png" alt="Screenshot 5" style="max-width: 100%; border-radius: 12px;" />
+        <img src="/images/luresettings.png" alt="Screenshot 6" style="max-width: 100%; border-radius: 12px;" />
+        <img src="/images/fish_weight_curve.png" alt="Screenshot 7" style="max-width: 100%; border-radius: 12px;" />
+    </main>
+
+    <!-- Reusable footer with contact modal -->
+    <div id="site-footer"></div>
+
+    <script>
+        // Load shared navbar
+        fetch('/navbar.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('navbar').innerHTML = html;
+            });
+
+        // Load shared footer and bind modal functionality
+        fetch('/footer.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('site-footer').innerHTML = html;
+
+                const contactBtn = document.getElementById('contactBtn');
+                const contactModal = document.getElementById('contactModal');
+                const closeModal = document.getElementById('closeModal');
+
+                contactBtn?.addEventListener('click', () => {
+                    contactModal.style.display = 'flex';
+                });
+
+                closeModal?.addEventListener('click', () => {
+                    contactModal.style.display = 'none';
+                });
+
+                window.addEventListener('click', (e) => {
+                    if (e.target === contactModal) {
+                        contactModal.style.display = 'none';
+                    }
+                });
+            });
+    </script>
+</body>
+
+</html>
