@@ -7,15 +7,7 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header>
-    <nav>
-      <ul class="navbar">
-        <li><a href="index.html">🏠 Home</a></li>
-        <li><a href="models.html">🧊 Models</a></li>
-        <li><a href="projects.html">🎮 Projects</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div id="navbar"></div>
 
   <main>
     <h1>Game Projects</h1>
@@ -47,5 +39,40 @@
       <!-- Add more project cards below -->
     </div>
   </main>
+  <div id="site-footer"></div>
+  <script>
+    // Load navbar
+    fetch('/navbar.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('navbar').innerHTML = html;
+      });
+
+    // Load footer, THEN bind modal events after it's injected
+    fetch('/footer.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('site-footer').innerHTML = html;
+
+        // Now footer is in the DOM, we can bind modal events
+        const contactBtn = document.getElementById('contactBtn');
+        const contactModal = document.getElementById('contactModal');
+        const closeModal = document.getElementById('closeModal');
+
+        contactBtn?.addEventListener('click', () => {
+          contactModal.style.display = 'flex';
+        });
+
+        closeModal?.addEventListener('click', () => {
+          contactModal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+          if (e.target === contactModal) {
+            contactModal.style.display = 'none';
+          }
+        });
+      });
+  </script>
 </body>
 </html>
