@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Title</title>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body>
+    <!-- Reusable navbar -->
+    <div id="navbar"></div>
+
+    <main>
+        <h1>Ant simulator</h1>
+        <p>A game where I experimented with dynamic animations.</p>
+
+        <h2>About the Project</h2>
+        <p>
+            I wanted to learn more about IK animations in games, as I had already used IK rigs in 3D modeling. Unreal Engine has a lot of helpful tools already built-in,
+            and one of those is the Control Rig. Setting up the Control Rig for the ant character was relatively easy and the basic IK setup is straight forward. However,
+            implementing things like the foot rising up when moving forward or the prediciton of the next step are increasingly harder to pull off in a realistic way.
+        </p>
+
+        <!-- Primary video -->
+        <video controls muted width="100%" style="max-width: 720px; border-radius: 12px; margin: 1rem 0;">
+            <source src="videos/ant.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Optional second video -->
+        <!-- <video controls muted width="100%" style="max-width: 720px; border-radius: 12px; margin: 1rem 0;">
+      <source src="/videos/project-video2.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video> -->
+
+        <h2>Screenshots</h2>
+        <img src="images/project1.png" alt="Screenshot 1"
+            style="max-width: 100%; border-radius: 12px; margin-bottom: 1rem;" />
+        <img src="images/project2.png" alt="Screenshot 2" style="max-width: 100%; border-radius: 12px;" />
+    </main>
+
+    <!-- Reusable footer with contact modal -->
+    <div id="site-footer"></div>
+
+    <script>
+        // Load shared navbar
+        fetch('/navbar.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('navbar').innerHTML = html;
+            });
+
+        // Load shared footer and bind modal functionality
+        fetch('/footer.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('site-footer').innerHTML = html;
+
+                const contactBtn = document.getElementById('contactBtn');
+                const contactModal = document.getElementById('contactModal');
+                const closeModal = document.getElementById('closeModal');
+
+                contactBtn?.addEventListener('click', () => {
+                    contactModal.style.display = 'flex';
+                });
+
+                closeModal?.addEventListener('click', () => {
+                    contactModal.style.display = 'none';
+                });
+
+                window.addEventListener('click', (e) => {
+                    if (e.target === contactModal) {
+                        contactModal.style.display = 'none';
+                    }
+                });
+            });
+    </script>
+</body>
+
+</html>

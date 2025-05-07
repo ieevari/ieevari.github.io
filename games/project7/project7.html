@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metal Detecting prototype</title>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body>
+    <!-- Reusable navbar -->
+    <div id="navbar"></div>
+
+    <main>
+        <h1>Metal Detecting prototype</h1>
+        <p>Metal Detecting simulator with photoscanned environment assets.</p>
+
+        <h2>About the Project</h2>
+        <p>
+            Inspired by a hobby of mine, I started this metal detecting themed project. I learned photogrammetry and turned some trees, rocks and similar natural objects into 3D assets to use
+            primarily in this project. I studied Agisoft Metashape and found it to be a really powerful tool for creating realistic 3D assets from photos.
+
+            I made a table of possible finds that helped me randomly generate them in the game world with controllable varity. Some basic UI was also experimented with,
+            along with a crude inventory system. I noly used Unreal Engine's blueprints in this project. They can look quite messy as can be seen in the screenshots below,
+            but blueprints are a really fast and easy way to prototype features. For intensive calculations or heavy for-loops I prefer C++ though.
+        </p>
+
+        <!-- Primary video -->
+        <video controls muted width="100%" style="max-width: 720px; border-radius: 12px; margin: 1rem 0;">
+            <source src="videos/metaldetect.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Optional second video -->
+        <!-- <video controls muted width="100%" style="max-width: 720px; border-radius: 12px; margin: 1rem 0;">
+      <source src="/videos/project-video2.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video> -->
+
+        <h2>Screenshots</h2>
+        <img src="images/table.png" alt="Screenshot 1"
+            style="max-width: 100%; border-radius: 12px; margin-bottom: 1rem;" />
+        <img src="images/messy_bp.png" alt="Screenshot 2" style="max-width: 100%; border-radius: 12px;" />
+    </main>
+
+    <!-- Reusable footer with contact modal -->
+    <div id="site-footer"></div>
+
+    <script>
+        // Load shared navbar
+        fetch('/navbar.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('navbar').innerHTML = html;
+            });
+
+        // Load shared footer and bind modal functionality
+        fetch('/footer.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('site-footer').innerHTML = html;
+
+                const contactBtn = document.getElementById('contactBtn');
+                const contactModal = document.getElementById('contactModal');
+                const closeModal = document.getElementById('closeModal');
+
+                contactBtn?.addEventListener('click', () => {
+                    contactModal.style.display = 'flex';
+                });
+
+                closeModal?.addEventListener('click', () => {
+                    contactModal.style.display = 'none';
+                });
+
+                window.addEventListener('click', (e) => {
+                    if (e.target === contactModal) {
+                        contactModal.style.display = 'none';
+                    }
+                });
+            });
+    </script>
+</body>
+
+</html>

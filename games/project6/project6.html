@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Viking City Builder</title>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body>
+    <!-- Reusable navbar -->
+    <div id="navbar"></div>
+
+    <main>
+        <h1>Viking City Builder</h1>
+        <p>Project for learning the classic city builder genre.</p>
+
+        <h2>About the Project</h2>
+        <p>
+            This project was made to learn the basics of city building/strategy games. Terrain was made in Gaea. Resource icon placeholders made using the generative AI Stable Diffusion.
+        </p>
+
+        <!-- Primary video -->
+        <video controls muted width="100%" style="max-width: 720px; border-radius: 12px; margin: 1rem 0;">
+            <source src="videos/viking.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Optional second video -->
+        <!-- <video controls muted width="100%" style="max-width: 720px; border-radius: 12px; margin: 1rem 0;">
+      <source src="/videos/project-video2.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video> -->
+
+    </main>
+
+    <!-- Reusable footer with contact modal -->
+    <div id="site-footer"></div>
+
+    <script>
+        // Load shared navbar
+        fetch('/navbar.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('navbar').innerHTML = html;
+            });
+
+        // Load shared footer and bind modal functionality
+        fetch('/footer.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('site-footer').innerHTML = html;
+
+                const contactBtn = document.getElementById('contactBtn');
+                const contactModal = document.getElementById('contactModal');
+                const closeModal = document.getElementById('closeModal');
+
+                contactBtn?.addEventListener('click', () => {
+                    contactModal.style.display = 'flex';
+                });
+
+                closeModal?.addEventListener('click', () => {
+                    contactModal.style.display = 'none';
+                });
+
+                window.addEventListener('click', (e) => {
+                    if (e.target === contactModal) {
+                        contactModal.style.display = 'none';
+                    }
+                });
+            });
+    </script>
+</body>
+
+</html>
