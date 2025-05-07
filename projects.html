@@ -18,7 +18,6 @@
     
     <div class="project-grid">
     
-      <!-- Game 1 -->
       <a class="project-card" href="games/project1/project1.html">
         <img src="images/project1_thumb.png" alt="Game thumbnail" />
         <div class="card-content">
@@ -27,7 +26,6 @@
         </div>
       </a>
     
-      <!-- Game 2 -->
       <a class="project-card" href="games/project2/project2.html">
         <img src="images/project2_thumb.png" alt="Game thumbnail" />
         <div class="card-content">
@@ -56,7 +54,7 @@
         <img src="images/project5_thumb.png" alt="Game thumbnail" />
         <div class="card-content">
           <h2>Elements</h2>
-          <p>Proof of concept for a game that revolves around combining different elements. Engine: Unreal Engine. Engine: Unreal Engine</p>
+          <p>Proof of concept for a game that revolves around combining different elements. Engine: Unreal Engine</p>
         </div>
       </a>
 
@@ -92,25 +90,21 @@
         </div>
       </a>
     
-      <!-- Add more project cards below -->
     </div>
   </main>
   <div id="site-footer"></div>
   <script>
-    // Load navbar
     fetch('/navbar.html')
       .then(res => res.text())
       .then(html => {
         document.getElementById('navbar').innerHTML = html;
       });
 
-    // Load footer, THEN bind modal events after it's injected
     fetch('/footer.html')
       .then(res => res.text())
       .then(html => {
         document.getElementById('site-footer').innerHTML = html;
 
-        // Now footer is in the DOM, we can bind modal events
         const contactBtn = document.getElementById('contactBtn');
         const contactModal = document.getElementById('contactModal');
         const closeModal = document.getElementById('closeModal');

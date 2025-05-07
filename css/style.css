@@ -184,7 +184,6 @@ model-viewer {
   padding: 0 2rem;
   max-width: 1200px;
   align-items: start;
-  /* or just remove this line entirely */
 }
 
 .info-card {
@@ -193,7 +192,6 @@ model-viewer {
   border-radius: 16px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s ease, background-color 0.3s ease;
-  /* No height set */
 }
 
 .info-card:hover {
@@ -255,7 +253,6 @@ model-viewer {
   color: #fff;
 }
 
-/* Modal Overlay */
 .modal-overlay {
   display: none;
   position: fixed;
@@ -270,7 +267,6 @@ model-viewer {
   align-items: center;
 }
 
-/* Modal Window */
 .modal-window {
   background: #1e1e1e;
   padding: 2rem;
@@ -283,7 +279,6 @@ model-viewer {
   text-align: left;
 }
 
-/* Close Button */
 .close-btn {
   position: absolute;
   top: 1rem;

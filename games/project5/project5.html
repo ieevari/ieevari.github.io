@@ -9,7 +9,6 @@
 </head>
 
 <body>
-    <!-- Reusable navbar -->
     <div id="navbar"></div>
 
     <main>
@@ -24,32 +23,22 @@
             that can then be easily attached to any player or npc. Modularity is something that I had not done a lot before as my projects were not large enough to benefit from modularity.
         </p>
 
-        <!-- Primary video -->
         <video controls muted width="100%" style="max-width: 720px; border-radius: 12px; margin: 1rem 0;">
             <source src="videos/elements.mp4" type="video/mp4" />
             Your browser does not support the video tag.
         </video>
 
-        <!-- Optional second video -->
-        <!-- <video controls muted width="100%" style="max-width: 720px; border-radius: 12px; margin: 1rem 0;">
-      <source src="/videos/project-video2.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video> -->
-
     </main>
 
-    <!-- Reusable footer with contact modal -->
     <div id="site-footer"></div>
 
     <script>
-        // Load shared navbar
         fetch('/navbar.html')
             .then(res => res.text())
             .then(html => {
                 document.getElementById('navbar').innerHTML = html;
             });
 
-        // Load shared footer and bind modal functionality
         fetch('/footer.html')
             .then(res => res.text())
             .then(html => {

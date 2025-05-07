@@ -9,7 +9,6 @@
 </head>
 
 <body>
-    <!-- Reusable navbar -->
     <div id="navbar"></div>
 
     <main>
@@ -21,32 +20,22 @@
             This project was made to learn the basics of city building/strategy games. Terrain was made in Gaea. Resource icon placeholders made using the generative AI Stable Diffusion.
         </p>
 
-        <!-- Primary video -->
         <video controls muted width="100%" style="max-width: 720px; border-radius: 12px; margin: 1rem 0;">
             <source src="videos/viking.mp4" type="video/mp4" />
             Your browser does not support the video tag.
         </video>
 
-        <!-- Optional second video -->
-        <!-- <video controls muted width="100%" style="max-width: 720px; border-radius: 12px; margin: 1rem 0;">
-      <source src="/videos/project-video2.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video> -->
-
     </main>
 
-    <!-- Reusable footer with contact modal -->
     <div id="site-footer"></div>
 
     <script>
-        // Load shared navbar
         fetch('/navbar.html')
             .then(res => res.text())
             .then(html => {
                 document.getElementById('navbar').innerHTML = html;
             });
 
-        // Load shared footer and bind modal functionality
         fetch('/footer.html')
             .then(res => res.text())
             .then(html => {

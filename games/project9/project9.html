@@ -9,7 +9,6 @@
 </head>
 
 <body>
-    <!-- Reusable navbar -->
     <div id="navbar"></div>
 
     <main>
@@ -27,17 +26,10 @@
             Experimented with NPC speech bubbles as well.
         </p>
 
-        <!-- Primary video -->
         <video controls muted width="100%" style="max-width: 720px; border-radius: 12px; margin: 1rem 0;">
             <source src="videos/topdown.mp4" type="video/mp4" />
             Your browser does not support the video tag.
         </video>
-
-        <!-- Optional second video -->
-        <!-- <video controls muted width="100%" style="max-width: 720px; border-radius: 12px; margin: 1rem 0;">
-      <source src="/videos/project-video2.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video> -->
 
         <h2>Screenshots</h2>
         <img src="images/animation.png" alt="Screenshot 1"
@@ -45,18 +37,15 @@
         <img src="images/blender.png" alt="Screenshot 2" style="max-width: 100%; border-radius: 12px;" />
     </main>
 
-    <!-- Reusable footer with contact modal -->
     <div id="site-footer"></div>
 
     <script>
-        // Load shared navbar
         fetch('/navbar.html')
             .then(res => res.text())
             .then(html => {
                 document.getElementById('navbar').innerHTML = html;
             });
 
-        // Load shared footer and bind modal functionality
         fetch('/footer.html')
             .then(res => res.text())
             .then(html => {
